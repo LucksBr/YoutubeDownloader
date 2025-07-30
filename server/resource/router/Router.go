@@ -14,6 +14,7 @@ func CreateRouter() *Router {
 	}
 }
 
+// TO-DO: CREATE VALIDATION IF NAME PATH ("/") AND METHODPATH('GET','POST'...) ALREADY EXISTS
 func (router *Router) RegisterRoute(methodHttp MethodHttp, path string, handlerFunc http.HandlerFunc) {
 	if router.routes[path] == nil {
 		router.routes[path] = make(map[MethodHttp]http.HandlerFunc)
